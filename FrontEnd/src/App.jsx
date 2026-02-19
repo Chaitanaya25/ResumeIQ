@@ -3,7 +3,9 @@ import LandingPage from './components/LandingPage'
 import LoadingScreen from './components/LoadingScreen'
 import ResultsDashboard from './components/ResultsDashboard'
 
-const API_BASE = 'http://localhost:8000'
+const API_BASE = 'https://resumeiq-backend.onrender.com'
+```
+
 
 export default function App() {
   const [view, setView] = useState('landing') // 'landing' | 'loading' | 'results' | 'error'
