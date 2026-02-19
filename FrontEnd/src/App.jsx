@@ -3,7 +3,7 @@ import LandingPage from './components/LandingPage'
 import LoadingScreen from './components/LoadingScreen'
 import ResultsDashboard from './components/ResultsDashboard'
 
-const API_BASE = import.meta.env.VITE_API_BASE
+const API_BASE = 'https://resumeiq-production-3e39.up.railway.app'
 
 export default function App() {
   const [view, setView] = useState('landing')
