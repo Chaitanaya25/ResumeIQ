@@ -49,7 +49,7 @@ export default function App() {
       formData.append('resume', file)
       formData.append('job_description', jobDescription)
 
-      const res = await fetch(`${API_BASE}/analyze`, {
+      const res = await fetch(API_BASE + '/analyze', {
         method: 'POST',
         body: formData,
       })
