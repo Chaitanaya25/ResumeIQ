@@ -25,7 +25,6 @@ export default function App() {
       setView('error')
       return
     }
-
     if (!jobDescription.trim()) {
       setError('Please paste a job description.')
       setView('error')
@@ -37,7 +36,6 @@ export default function App() {
 
     let msgIdx = 0
     setLoadingMsg(LOADING_MESSAGES[0])
-
     const msgTimer = setInterval(() => {
       msgIdx = (msgIdx + 1) % LOADING_MESSAGES.length
       setLoadingMsg(LOADING_MESSAGES[msgIdx])
@@ -48,16 +46,16 @@ export default function App() {
       formData.append('resume', file)
       formData.append('job_description', jobDescription)
 
-      const res = await fetch(`${API_BASE}/analyze`, {
+      const res = await fetch(API_BASE + '/analyze', {
         method: 'POST',
         body: formData,
       })
 
       clearInterval(msgTimer)
- 
+
       if (!res.ok) {
         const errData = await res.json().catch(() => ({}))
-        throw new Error(errData?.detail || `Server error: ${res.status}`)
+        throw new Error(errData?.detail || 'Server error: ' + res.status)
       }
 
       const data = await res.json()
