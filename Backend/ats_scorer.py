@@ -4,7 +4,7 @@ import re
 
 
 # Load skills dictionary once at module level (same source as skill_extractor.py)
-_SKILLS_PATH = os.path.join(os.path.dirname(__file__), '..', 'Data', 'skills.json')
+_SKILLS_PATH = os.path.join(os.path.dirname(__file__), 'skills.json')
 with open(_SKILLS_PATH, 'r') as _f:
     _SKILLS_DATA = json.load(_f)
 
@@ -51,9 +51,9 @@ def extract_keywords(text: str) -> list:
     for pattern_str in _SKILL_PATTERNS:
         escaped = re.escape(pattern_str)
         if re.search(r'\b' + escaped + r'\b', text, re.IGNORECASE):
-            found.append(pattern_str)          # keep canonical casing from skills.json
+            found.append(pattern_str)
 
-    # Rule 2a: CamelCase words (e.g. SQLAlchemy, FastAPI) — two or more titlecase runs
+    # Rule 2a: CamelCase words (e.g. SQLAlchemy, FastAPI)
     found.extend(re.findall(r'\b(?:[A-Z][a-z]+){2,}\w*\b', text))
 
     # Rule 2b: known technical suffixes (.js, .py, API, ML, AI)
@@ -85,7 +85,6 @@ def extract_keywords(text: str) -> list:
 def keyword_match_score(resume_text: str, jd_text: str) -> dict:
     """
     Component 1 — Keyword Match Score (40% weight).
-    Extracts keywords from JD and checks how many appear in resume.
     """
     jd_keywords = extract_keywords(jd_text)
 
@@ -109,7 +108,6 @@ def keyword_match_score(resume_text: str, jd_text: str) -> dict:
 def section_structure_score(resume_text: str) -> float:
     """
     Component 3 — Section Structure Score (15% weight).
-    Checks for presence of key resume sections.
     """
     text_lower = resume_text.lower()
     total = 0
@@ -129,17 +127,12 @@ def section_structure_score(resume_text: str) -> float:
 def achievement_score(resume_text: str) -> float:
     """
     Component 4 — Achievement Score (15% weight).
-    Counts quantifiable achievements and strong action words.
     """
     count = 0
 
-    # Numbers with percentage (e.g. "99% accuracy", "1.5%")
     count += len(re.findall(r'\d+\.?\d*\s*%', resume_text))
-
-    # Numbers followed by words (e.g. "1500 images", "3 projects")
     count += len(re.findall(r'\b\d+\s+[a-zA-Z]+', resume_text))
 
-    # Strong action verbs
     action_words = [
         'improved', 'achieved', 'reduced', 'increased',
         'built', 'designed', 'developed', 'deployed',
@@ -151,7 +144,6 @@ def achievement_score(resume_text: str) -> float:
 
 
 def get_ats_label(score: float) -> str:
-    """Convert numeric ATS score to human-readable label."""
     if score >= 95:
         return "Perfect Match"
     elif score >= 80:
@@ -171,13 +163,12 @@ def calculate_ats_score(
 ) -> dict:
     """
     Main function — calculates weighted ATS score from 4 components.
-    Call this from main.py after get_skill_gap.
     """
     # Component 1: Keyword Match (40%)
     kw_result = keyword_match_score(resume_text, job_description)
     keyword_score = kw_result["score"]
 
-    # Component 2: Skill Coverage (30%) — passed in from skill_extractor
+    # Component 2: Skill Coverage (30%)
     skill_score = round(skill_match_percent, 2)
 
     # Component 3: Section Structure (15%)
