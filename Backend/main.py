@@ -16,16 +16,12 @@ app = FastAPI(
 )
 
 # -----------------------------
-# CORS Configuration (Production Safe)
+# CORS Configuration (Fixed)
 # -----------------------------
-origins = [
-    "https://your-vercel-app.vercel.app",  # replace with actual Vercel URL
-]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
+    allow_origins=["*"],          # Allow all origins
+    allow_credentials=False,      # MUST be False when using "*"
     allow_methods=["*"],
     allow_headers=["*"],
 )
