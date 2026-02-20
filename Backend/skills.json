@@ -1,0 +1,142 @@
+{
+  "technical_skills_taxonomy": {
+    "programming_languages": {
+      "weight": 1.0,
+      "skills": [
+        {"name": "C", "aliases": ["C language"]},
+        {"name": "C++", "aliases": ["CPP"]},
+        {"name": "Java", "aliases": []},
+        {"name": "Python", "aliases": []},
+        {"name": "JavaScript", "aliases": ["JS"]},
+        {"name": "TypeScript", "aliases": ["TS"]},
+        {"name": "Go", "aliases": ["Golang"]},
+        {"name": "Rust", "aliases": []},
+        {"name": "Kotlin", "aliases": []},
+        {"name": "Swift", "aliases": []},
+        {"name": "PHP", "aliases": []},
+        {"name": "Ruby", "aliases": []},
+        {"name": "R", "aliases": []},
+        {"name": "MATLAB", "aliases": []},
+        {"name": "Scala", "aliases": []},
+        {"name": "Dart", "aliases": []}
+      ]
+    },
+
+    "frontend_development": {
+      "weight": 1.2,
+      "skills": [
+        {"name": "HTML", "aliases": []},
+        {"name": "CSS", "aliases": []},
+        {"name": "Sass", "aliases": []},
+        {"name": "Bootstrap", "aliases": []},
+        {"name": "Tailwind CSS", "aliases": ["Tailwind"]},
+        {"name": "React", "aliases": ["React.js"]},
+        {"name": "Next.js", "aliases": []},
+        {"name": "Angular", "aliases": []},
+        {"name": "Vue.js", "aliases": ["Vue"]},
+        {"name": "Redux", "aliases": []}
+      ]
+    },
+
+    "backend_development": {
+      "weight": 1.3,
+      "skills": [
+        {"name": "Node.js", "aliases": []},
+        {"name": "Express.js", "aliases": ["Express"]},
+        {"name": "Spring Boot", "aliases": []},
+        {"name": "Django", "aliases": []},
+        {"name": "Flask", "aliases": []},
+        {"name": "FastAPI", "aliases": []},
+        {"name": "Ruby on Rails", "aliases": ["Rails"]},
+        {"name": ".NET", "aliases": ["Dotnet"]},
+        {"name": "REST API", "aliases": ["RESTful API"]},
+        {"name": "GraphQL", "aliases": []}
+      ]
+    },
+
+    "databases": {
+      "weight": 1.3,
+      "skills": [
+        {"name": "MySQL", "aliases": []},
+        {"name": "PostgreSQL", "aliases": ["Postgres"]},
+        {"name": "MongoDB", "aliases": []},
+        {"name": "SQLite", "aliases": []},
+        {"name": "Oracle", "aliases": []},
+        {"name": "Redis", "aliases": []},
+        {"name": "Cassandra", "aliases": []},
+        {"name": "Firebase", "aliases": []},
+        {"name": "DynamoDB", "aliases": []}
+      ]
+    },
+
+    "data_science_ml": {
+      "weight": 1.5,
+      "skills": [
+        {"name": "NumPy", "aliases": []},
+        {"name": "Pandas", "aliases": []},
+        {"name": "Scikit-learn", "aliases": ["sklearn"]},
+        {"name": "TensorFlow", "aliases": []},
+        {"name": "PyTorch", "aliases": []},
+        {"name": "Keras", "aliases": []},
+        {"name": "XGBoost", "aliases": []},
+        {"name": "LightGBM", "aliases": []},
+        {"name": "OpenCV", "aliases": []},
+        {"name": "NLP", "aliases": ["Natural Language Processing"]},
+        {"name": "Computer Vision", "aliases": []},
+        {"name": "Deep Learning", "aliases": ["DL"]},
+        {"name": "Machine Learning", "aliases": ["ML"]}
+      ]
+    },
+
+    "devops_cloud": {
+      "weight": 1.4,
+      "skills": [
+        {"name": "Docker", "aliases": []},
+        {"name": "Kubernetes", "aliases": ["K8s"]},
+        {"name": "CI/CD", "aliases": []},
+        {"name": "GitHub Actions", "aliases": []},
+        {"name": "AWS", "aliases": ["Amazon Web Services"]},
+        {"name": "Azure", "aliases": []},
+        {"name": "Google Cloud", "aliases": ["GCP"]},
+        {"name": "Terraform", "aliases": []},
+        {"name": "Jenkins", "aliases": []}
+      ]
+    },
+
+    "tools_and_version_control": {
+      "weight": 1.0,
+      "skills": [
+        {"name": "Git", "aliases": []},
+        {"name": "GitHub", "aliases": []},
+        {"name": "GitLab", "aliases": []},
+        {"name": "Bitbucket", "aliases": []},
+        {"name": "JIRA", "aliases": []},
+        {"name": "Postman", "aliases": []},
+        {"name": "Linux", "aliases": []},
+        {"name": "Bash", "aliases": []}
+      ]
+    },
+
+    "mobile_development": {
+      "weight": 1.2,
+      "skills": [
+        {"name": "Android", "aliases": []},
+        {"name": "iOS", "aliases": []},
+        {"name": "React Native", "aliases": []},
+        {"name": "Flutter", "aliases": []},
+        {"name": "SwiftUI", "aliases": []}
+      ]
+    },
+
+    "cybersecurity": {
+      "weight": 1.4,
+      "skills": [
+        {"name": "Penetration Testing", "aliases": ["Pen Testing"]},
+        {"name": "Ethical Hacking", "aliases": []},
+        {"name": "Network Security", "aliases": []},
+        {"name": "Cryptography", "aliases": []},
+        {"name": "OWASP", "aliases": []}
+      ]
+    }
+  }
+}

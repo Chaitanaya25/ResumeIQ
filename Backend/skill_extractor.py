@@ -3,8 +3,7 @@ import os
 import re
 
 # load skills dictionary
-SKILLS_PATH = os.path.join(os.path.dirname(__file__), '..', 'Data', 'skills.json')
-
+SKILLS_PATH = os.path.join(os.path.dirname(__file__), 'skills.json')
 with open(SKILLS_PATH, 'r') as f:
     SKILLS_DATA = json.load(f)
 
