@@ -18,7 +18,7 @@ for category, category_data in SKILLS_DATA["technical_skills_taxonomy"].items():
         }
         ALL_SKILLS.append(skill_entry)
 
-print(f"✅ Loaded {len(ALL_SKILLS)} skills from dictionary")
+print(f"[OK] Loaded {len(ALL_SKILLS)} skills from dictionary")
 
 
 def match_skill_in_text(skill_entry: dict, text: str) -> bool:

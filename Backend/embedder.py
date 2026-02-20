@@ -5,7 +5,7 @@ import numpy as np
 # downloads ~80MB first time, then cached locally
 print("Loading sentence transformer model...")
 model = SentenceTransformer('all-MiniLM-L6-v2')
-print("✅ Model loaded successfully")
+print("[OK] Model loaded successfully")
 
 
 def generate_embedding(text: str) -> np.ndarray:
@@ -61,7 +61,7 @@ def embed_resume_and_job(resume_text: str, job_text: str) -> dict:
     job_embedding = generate_embedding(job_text)
     chunk_embeddings = generate_chunk_embeddings(resume_text)
 
-    print(f"✅ Generated embeddings for {len(chunk_embeddings)} resume chunks")
+    print(f"[OK] Generated embeddings for {len(chunk_embeddings)} resume chunks")
 
     return {
         "resume_embedding": resume_embedding,
