@@ -3,7 +3,7 @@ import LandingPage from './components/LandingPage'
 import LoadingScreen from './components/LoadingScreen'
 import ResultsDashboard from './components/ResultsDashboard'
 
-const API_BASE = 'https://resumeiq-production-3e39.up.railway.app'
+const API_BASE = 'https://resumeiq-nffq.onrender.com'
 
 export default function App() {
   const [view, setView] = useState('landing')
@@ -54,7 +54,7 @@ export default function App() {
       })
 
       clearInterval(msgTimer)
-
+ 
       if (!res.ok) {
         const errData = await res.json().catch(() => ({}))
         throw new Error(errData?.detail || `Server error: ${res.status}`)
